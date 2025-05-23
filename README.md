@@ -15,18 +15,13 @@ emotion-analysis/
 ├── preprocess/
 │   ├── cleaner.py               # Làm sạch văn bản, chuẩn hóa tiếng Việt
 │   └── tokenizer.py             # Tách từ hoặc token hóa theo mô hình
-├── models/
-│   ├── bert_model.py            # Mô hình BERT hoặc Transformer
-│   ├── lstm_model.py            # Mô hình LSTM/RNN
-│   └── svm_model.py             # Mô hình học máy truyền thống
+├── models/                      # Mô hình bài toán
 ├── trainer/
 │   ├── train.py                 # Huấn luyện mô hình
-│   ├── evaluate.py              # Đánh giá mô hình (Accuracy, F1, v.v.)
+│   ├── evaluate.py              # Đánh giá mô hình 
 │   └── utils.py                 # Hàm tiện ích (set seed, lưu mô hình,...)
 ├── predict/
-│   └── predict.py               # Script nhận văn bản đầu vào và dự đoán cảm xúc
-├── notebooks/
-│   └── exploratory_analysis.ipynb # Jupyter Notebook để phân tích dữ liệu
+├── notebooks/                   # Jupyter Notebook 
 ├── outputs/
 │   ├── logs/                    # File log khi training
 │   ├── models/                  # Mô hình đã huấn luyện
@@ -36,4 +31,4 @@ emotion-analysis/
 │   └── fastapi_app.py           # REST API bằng FastAPI
 ├── main.py                      # Pipeline chính: load dữ liệu → train → predict
 ├── requirements.txt             # Danh sách thư viện cần cài
-└── README.md                    # Giới thiệu dự án
+└── README.md                    
