@@ -1,6 +1,3 @@
-# Tạo file README.md với nội dung cấu trúc thư mục đúng chuẩn markdown
-readme_content = """
-# Emotion Analysis Project
 
 ## Cấu trúc thư mục dự án
 
