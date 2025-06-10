@@ -1,0 +1,30 @@
+2025-06-04 21:08:23,946 - root - INFO - Logging to E:\EmotionAnalysis\Emotions-Analysis\outputs\logs\20250604_210823_training.log
+2025-06-04 21:08:23,946 - root - INFO - Starting training pipeline...
+2025-06-04 21:08:23,946 - root - INFO - Using device: cuda
+2025-06-04 21:08:24,867 - root - INFO - Loaded tokenizer with vocab size: 30522
+2025-06-04 21:08:24,867 - root - INFO - Loading data from raw files...
+2025-06-04 21:08:24,867 - root - INFO - Loading raw data...
+2025-06-04 21:08:25,497 - root - INFO - Preprocessing data ...
+2025-06-04 21:08:27,182 - root - INFO - Data sizes - Train: 5548, Val: 686, Test: 693
+2025-06-04 21:08:27,182 - root - INFO - Data loaded - Train: 5548, Val: 686, Test: 693
+2025-06-04 21:08:27,182 - root - INFO - Train set unique emotions: [6 5 0 2 3 1 4]
+2025-06-04 21:08:27,182 - root - INFO - Val set unique emotions: [6 0 1 2 4 5 3]
+2025-06-04 21:08:27,182 - root - INFO - Creating datasets...
+2025-06-04 21:08:27,182 - root - INFO - Setting vocab size to 30522
+2025-06-04 21:08:27,182 - root - INFO - Creating dataloaders...
+2025-06-04 21:08:27,182 - root - INFO - Initializing trainer...
+2025-06-04 21:08:27,518 - root - INFO - Starting training...
+2025-06-04 21:08:53,935 - root - ERROR - An error occurred: Expected `device_type` of type `str`, got: `<class 'bool'>`
+Traceback (most recent call last):
+  File "E:\EmotionAnalysis\Emotions-Analysis\main.py", line 108, in main
+    train_results = trainer.train(train_loader, val_loader)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\EmotionAnalysis\Emotions-Analysis\src\trainer\train.py", line 217, in train
+    train_metrics = self.train_epoch(train_loader)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\EmotionAnalysis\Emotions-Analysis\src\trainer\train.py", line 125, in train_epoch
+    with torch.amp.autocast(self.device.type == 'cuda'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\anaconda3\Lib\site-packages\torch\amp\autocast_mode.py", line 226, in __init__
+    raise ValueError(
+ValueError: Expected `device_type` of type `str`, got: `<class 'bool'>`

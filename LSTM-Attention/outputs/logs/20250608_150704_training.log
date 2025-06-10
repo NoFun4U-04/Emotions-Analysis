@@ -1,0 +1,38 @@
+2025-06-08 15:07:04,538 - root - INFO - Logging to E:\EmotionAnalysis\Emotions-Analysis\outputs\logs\20250608_150704_training.log
+2025-06-08 15:07:04,538 - root - INFO - Starting training pipeline...
+2025-06-08 15:07:04,538 - root - INFO - Using device: cuda
+2025-06-08 15:07:14,032 - root - INFO - Tokenizer loaded successfully.
+2025-06-08 15:07:14,032 - root - INFO - Loading data from raw files...
+2025-06-08 15:07:14,032 - root - INFO - Loading raw data...
+2025-06-08 15:07:14,393 - root - INFO - Preprocessing data ...
+2025-06-08 15:07:15,206 - root - INFO - Data sizes - Train: 5548, Val: 686, Test: 693
+2025-06-08 15:07:15,206 - root - INFO - Data loaded - Train: 5548, Val: 686, Test: 693
+2025-06-08 15:07:15,206 - root - INFO - Train set unique emotions: [6 5 0 2 3 1 4]
+2025-06-08 15:07:15,206 - root - INFO - Val set unique emotions: [6 0 1 2 4 5 3]
+2025-06-08 15:07:15,206 - root - INFO - Creating datasets...
+2025-06-08 15:07:15,206 - root - INFO - Setting vocab size to 64000
+2025-06-08 15:07:15,206 - root - INFO - Creating dataloaders...
+2025-06-08 15:07:15,206 - root - INFO - Initializing trainer...
+2025-06-08 15:07:16,897 - root - INFO - Starting training...
+2025-06-08 16:47:12,876 - root - INFO - Training completed. Best validation loss: 0.8491
+2025-06-08 16:47:14,492 - root - INFO - Final model saved to E:\EmotionAnalysis\Emotions-Analysis\outputs\models\final_model.pt
+2025-06-08 16:47:14,493 - root - INFO - Evaluating on validation set...
+2025-06-08 16:47:49,450 - root - INFO - Validation evaluation report saved to E:\EmotionAnalysis\Emotions-Analysis\outputs\validation_evaluation_report.txt
+2025-06-08 16:47:49,451 - root - INFO - 
+Validation Set Results:
+2025-06-08 16:47:49,451 - root - INFO - Accuracy: 0.4807
+2025-06-08 16:47:49,451 - root - INFO - Precision: 0.4920
+2025-06-08 16:47:49,451 - root - INFO - Recall: 0.4807
+2025-06-08 16:47:49,451 - root - INFO - F1: 0.4795
+2025-06-08 16:47:49,451 - root - INFO - Confusion_matrix_path: E:\EmotionAnalysis\Emotions-Analysis\outputs\figures\confusion_matrix_20250608_164748.png
+2025-06-08 16:47:49,452 - root - INFO - Loading best model from E:\EmotionAnalysis\Emotions-Analysis\outputs\models\best_model.pt
+2025-06-08 16:47:50,229 - root - INFO - Evaluating on test set...
+2025-06-08 16:49:23,777 - root - INFO - Test evaluation report saved to E:\EmotionAnalysis\Emotions-Analysis\outputs\test_evaluation_report.txt
+2025-06-08 16:49:23,777 - root - INFO - 
+Test Set Results:
+2025-06-08 16:49:23,777 - root - INFO - Accuracy: 0.5180
+2025-06-08 16:49:23,778 - root - INFO - Precision: 0.5498
+2025-06-08 16:49:23,778 - root - INFO - Recall: 0.5180
+2025-06-08 16:49:23,778 - root - INFO - F1: 0.5039
+2025-06-08 16:49:23,778 - root - INFO - Confusion_matrix_path: E:\EmotionAnalysis\Emotions-Analysis\outputs\figures\confusion_matrix_20250608_164922.png
+2025-06-08 16:49:23,778 - root - INFO - Training and evaluation pipeline completed successfully!

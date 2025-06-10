@@ -1,0 +1,30 @@
+2025-06-09 17:47:17,534 - root - INFO - Logging to E:\EmotionAnalysis\Emotions-Analysis\outputs\logs\20250609_174717_training.log
+2025-06-09 17:47:17,534 - root - INFO - Starting training pipeline...
+2025-06-09 17:47:17,534 - root - INFO - Using device: cuda
+2025-06-09 17:47:19,182 - root - INFO - Tokenizer loaded successfully.
+2025-06-09 17:47:19,182 - root - INFO - Loading data from raw files...
+2025-06-09 17:47:19,182 - root - INFO - Loading raw data...
+2025-06-09 17:47:19,957 - root - INFO - Preprocessing data ...
+2025-06-09 17:47:21,193 - root - INFO - Data sizes - Train: 5548, Val: 686, Test: 693
+2025-06-09 17:47:21,193 - root - INFO - Data loaded - Train: 5548, Val: 686, Test: 693
+2025-06-09 17:47:21,193 - root - INFO - Train set unique emotions: [6 5 0 2 3 1 4]
+2025-06-09 17:47:21,193 - root - INFO - Val set unique emotions: [6 0 1 2 4 5 3]
+2025-06-09 17:47:21,193 - root - INFO - Creating datasets...
+2025-06-09 17:47:21,193 - root - INFO - Setting vocab size to 64000
+2025-06-09 17:47:21,193 - root - INFO - Creating dataloaders...
+2025-06-09 17:47:21,202 - root - INFO - Initializing trainer...
+2025-06-09 17:47:22,307 - root - INFO - Starting training...
+2025-06-09 17:48:14,118 - root - ERROR - An error occurred: 'Trainer' object has no attribute 'initial_lr'
+Traceback (most recent call last):
+  File "E:\EmotionAnalysis\Emotions-Analysis\main.py", line 108, in main
+    train_results = trainer.train(train_loader, val_loader)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\EmotionAnalysis\Emotions-Analysis\src\trainer\train.py", line 233, in train
+    train_metrics = self.train_epoch(train_loader)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\EmotionAnalysis\Emotions-Analysis\src\trainer\train.py", line 177, in train_epoch
+    self._adjust_learning_rate()
+  File "E:\EmotionAnalysis\Emotions-Analysis\src\trainer\train.py", line 108, in _adjust_learning_rate
+    lr = self.initial_lr * progress
+         ^^^^^^^^^^^^^^^
+AttributeError: 'Trainer' object has no attribute 'initial_lr'

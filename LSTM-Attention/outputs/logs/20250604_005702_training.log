@@ -1,0 +1,54 @@
+2025-06-04 00:57:02,893 - root - INFO - Logging to E:\EmotionAnalysis\Emotions-Analysis\outputs\logs\20250604_005702_training.log
+2025-06-04 00:57:02,893 - root - INFO - Starting training pipeline...
+2025-06-04 00:57:02,894 - root - INFO - Using device: cuda
+2025-06-04 00:57:04,002 - root - INFO - Loaded tokenizer with vocab size: 30522
+2025-06-04 00:57:04,002 - root - INFO - Loading data from raw files...
+2025-06-04 00:57:04,002 - root - INFO - Loading raw data...
+2025-06-04 00:57:04,551 - root - INFO - Data sizes - Train: 5548, Val: 686, Test: 693
+2025-06-04 00:57:04,551 - root - INFO - Data loaded - Train: 5548, Val: 686, Test: 693
+2025-06-04 00:57:04,552 - root - INFO - Train set unique emotions: [6 5 0 2 3 1 4]
+2025-06-04 00:57:04,552 - root - INFO - Val set unique emotions: [6 0 1 2 4 5 3]
+2025-06-04 00:57:04,552 - root - INFO - Creating datasets...
+2025-06-04 00:57:04,552 - root - INFO - Setting vocab size to 30522
+2025-06-04 00:57:04,553 - root - INFO - Creating dataloaders...
+2025-06-04 00:57:04,554 - root - INFO - Initializing trainer...
+2025-06-04 00:57:04,895 - root - INFO - Starting training...
+2025-06-04 02:03:14,196 - root - INFO - Training completed. Best validation loss: 1.0079
+2025-06-04 02:03:14,467 - root - INFO - Final model saved to E:\EmotionAnalysis\Emotions-Analysis\outputs\models\final_model.pt
+2025-06-04 02:03:14,467 - root - INFO - Evaluating on validation set...
+2025-06-04 02:03:51,902 - root - INFO - Validation evaluation report saved to E:\EmotionAnalysis\Emotions-Analysis\outputs\validation_evaluation_report.txt
+2025-06-04 02:03:51,902 - root - INFO - 
+Validation Set Results:
+2025-06-04 02:03:51,902 - root - INFO - Accuracy: 0.4824
+2025-06-04 02:03:51,902 - root - INFO - Precision: 0.4818
+2025-06-04 02:03:51,902 - root - INFO - Recall: 0.4824
+2025-06-04 02:03:51,902 - root - INFO - F1: 0.4740
+2025-06-04 02:03:51,902 - root - INFO - Confusion_matrix_path: E:\EmotionAnalysis\Emotions-Analysis\outputs\figures\confusion_matrix_20250604_020350.png
+2025-06-04 02:03:51,902 - root - INFO - Evaluating on test set...
+2025-06-04 02:04:28,189 - root - ERROR - An error occurred: The size of tensor a (5) must match the size of tensor b (8) at non-singleton dimension 1
+Traceback (most recent call last):
+  File "E:\EmotionAnalysis\Emotions-Analysis\main.py", line 141, in main
+    test_metrics = evaluate_model(
+                   ^^^^^^^^^^^^^^^
+  File "E:\EmotionAnalysis\Emotions-Analysis\src\trainer\evaluate.py", line 95, in evaluate_model
+    logits = model(inputs, lengths)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\EmotionAnalysis\Emotions-Analysis\src\models\LSTM_AttentionClassifier.py", line 94, in forward
+    attn_out = self.attention(rnn_out, lengths)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ADMIN\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\EmotionAnalysis\Emotions-Analysis\src\models\attention.py", line 72, in forward
+    attn_scores = attn_scores.masked_fill(mask == 0, float('-inf'))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: The size of tensor a (5) must match the size of tensor b (8) at non-singleton dimension 1

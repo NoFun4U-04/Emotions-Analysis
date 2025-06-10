@@ -1,0 +1,23 @@
+2025-06-04 00:53:01,582 - root - INFO - Logging to E:\EmotionAnalysis\Emotions-Analysis\outputs\logs\20250604_005301_training.log
+2025-06-04 00:53:01,583 - root - INFO - Starting training pipeline...
+2025-06-04 00:53:01,583 - root - INFO - Using device: cuda
+2025-06-04 00:53:02,468 - root - INFO - Loaded tokenizer with vocab size: 30522
+2025-06-04 00:53:02,468 - root - INFO - Loading data from raw files...
+2025-06-04 00:53:02,468 - root - INFO - Loading raw data...
+2025-06-04 00:53:02,912 - root - INFO - Data sizes - Train: 5548, Val: 686, Test: 693
+2025-06-04 00:53:02,913 - root - INFO - Data loaded - Train: 5548, Val: 686, Test: 693
+2025-06-04 00:53:02,913 - root - INFO - Train set unique emotions: [6 5 0 2 3 1 4]
+2025-06-04 00:53:02,913 - root - INFO - Val set unique emotions: [6 0 1 2 4 5 3]
+2025-06-04 00:53:02,913 - root - INFO - Creating datasets...
+2025-06-04 00:53:02,913 - root - INFO - Setting vocab size to 30522
+2025-06-04 00:53:02,914 - root - INFO - Creating dataloaders...
+2025-06-04 00:53:02,914 - root - INFO - Initializing trainer...
+2025-06-04 00:53:03,239 - root - ERROR - An error occurred: GradScaler.__init__() got an unexpected keyword argument 'device_type'
+Traceback (most recent call last):
+  File "E:\EmotionAnalysis\Emotions-Analysis\main.py", line 103, in main
+    trainer = Trainer(config).to(device) if hasattr(Trainer, 'to') else Trainer(config)
+                                                                        ^^^^^^^^^^^^^^^
+  File "E:\EmotionAnalysis\Emotions-Analysis\src\trainer\train.py", line 53, in __init__
+    self.scaler = torch.amp.GradScaler(device_type='cuda', enabled=(self.device.type == 'cuda'))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: GradScaler.__init__() got an unexpected keyword argument 'device_type'

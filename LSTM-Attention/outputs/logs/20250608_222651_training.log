@@ -1,0 +1,24 @@
+2025-06-08 22:26:51,561 - root - INFO - Logging to E:\EmotionAnalysis\Emotions-Analysis\outputs\logs\20250608_222651_training.log
+2025-06-08 22:26:51,576 - root - INFO - Starting training pipeline...
+2025-06-08 22:26:51,576 - root - INFO - Using device: cuda
+2025-06-08 22:26:51,576 - root - INFO - Word-level tokenizer (underthesea) loaded successfully.
+2025-06-08 22:26:51,576 - root - INFO - Loading data from raw files...
+2025-06-08 22:26:51,576 - root - INFO - Loading raw data...
+2025-06-08 22:26:52,652 - root - INFO - Preprocessing data ...
+2025-06-08 22:26:54,367 - root - INFO - Data sizes - Train: 5548, Val: 686, Test: 693
+2025-06-08 22:26:54,367 - root - INFO - Data loaded - Train: 5548, Val: 686, Test: 693
+2025-06-08 22:26:54,367 - root - INFO - Train set unique emotions: [6 5 0 2 3 1 4]
+2025-06-08 22:26:54,382 - root - INFO - Val set unique emotions: [6 0 1 2 4 5 3]
+2025-06-08 22:26:54,382 - root - INFO - Creating datasets...
+2025-06-08 22:26:56,013 - root - INFO - Setting vocab size to 5990
+2025-06-08 22:26:56,014 - root - INFO - Creating dataloaders...
+2025-06-08 22:26:56,014 - root - INFO - Initializing trainer...
+2025-06-08 22:26:56,014 - root - ERROR - An error occurred: LSTM_AttentionClassifier.__init__() got an unexpected keyword argument 'vocab_size'
+Traceback (most recent call last):
+  File "E:\EmotionAnalysis\Emotions-Analysis\main.py", line 109, in main
+    trainer = Trainer(config).to(device) if hasattr(Trainer, 'to') else Trainer(config)
+                                                                        ^^^^^^^^^^^^^^^
+  File "E:\EmotionAnalysis\Emotions-Analysis\src\trainer\train.py", line 24, in __init__
+    self.model = LSTM_AttentionClassifier(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: LSTM_AttentionClassifier.__init__() got an unexpected keyword argument 'vocab_size'
